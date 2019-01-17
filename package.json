@@ -1,6 +1,6 @@
 {
   "name": "@dolnpm/svg-icon",
-  "version": "0.1.0-development",
+  "version": "0.1.1-development",
   "description": "If you're using vector graphics (SVG) as icons, then this React component will be useful.",
   "main": "lib/index.js",
   "module": "es/index.js",

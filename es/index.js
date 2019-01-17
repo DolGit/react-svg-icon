@@ -20,29 +20,89 @@ var formatUrl = function formatUrl(url, name) {
     return url + name;
 };
 
-var SvgIcon = function (_React$Component) {
-    _inherits(SvgIcon, _React$Component);
+export var MakePath = function (_React$Component) {
+    _inherits(MakePath, _React$Component);
 
-    function SvgIcon() {
-        _classCallCheck(this, SvgIcon);
+    function MakePath() {
+        _classCallCheck(this, MakePath);
 
         return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
     }
 
-    SvgIcon.prototype.render = function render() {
+    MakePath.prototype.render = function render() {
         var _props = this.props,
-            iconUrl = _props.iconUrl,
-            name = _props.name;
+            color = _props.color,
+            name = _props.name,
+            iconUrl = _props.iconUrl;
+
+        var localUrl = iconUrl ? formatUrl(iconUrl, name) : formatUrl(url, name);
+        return React.createElement(
+            'g',
+            { fill: color },
+            React.createElement('use', { xlinkHref: localUrl })
+        );
+    };
+
+    return MakePath;
+}(React.Component);
+
+export var SvgMultiIcon = function (_React$Component2) {
+    _inherits(SvgMultiIcon, _React$Component2);
+
+    function SvgMultiIcon() {
+        _classCallCheck(this, SvgMultiIcon);
+
+        return _possibleConstructorReturn(this, _React$Component2.apply(this, arguments));
+    }
+
+    SvgMultiIcon.prototype.render = function render() {
+        var _props2 = this.props,
+            title = _props2.title,
+            className = _props2.className,
+            paths = _props2.paths,
+            iconUrl = _props2.iconUrl;
+
+        return React.createElement(
+            'svg',
+            { role: 'img', title: title, className: className },
+            paths && paths.map(function (path, index) {
+                return React.createElement(MakePath, { key: index, iconUrl: iconUrl, name: path.name, color: path.color });
+            })
+        );
+    };
+
+    return SvgMultiIcon;
+}(React.Component);
+
+SvgMultiIcon.propTypes = process.env.NODE_ENV !== "production" ? {
+    title: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    iconUrl: PropTypes.string,
+    paths: PropTypes.array
+} : {};
+
+var SvgIcon = function (_React$Component3) {
+    _inherits(SvgIcon, _React$Component3);
+
+    function SvgIcon() {
+        _classCallCheck(this, SvgIcon);
+
+        return _possibleConstructorReturn(this, _React$Component3.apply(this, arguments));
+    }
+
+    SvgIcon.prototype.render = function render() {
+        var _props3 = this.props,
+            iconUrl = _props3.iconUrl,
+            name = _props3.name,
+            title = _props3.title,
+            className = _props3.className,
+            color = _props3.color;
 
         iconUrl = iconUrl ? formatUrl(iconUrl, name) : formatUrl(url, name);
         return React.createElement(
             'svg',
-            { role: 'img', title: this.props.title, className: this.props.className },
-            React.createElement(
-                'g',
-                { fill: this.props.color },
-                React.createElement('use', { xlinkHref: iconUrl })
-            )
+            { role: 'img', title: title, className: className },
+            React.createElement(MakePath, { iconUrl: iconUrl, name: name, color: color })
         );
     };
 
