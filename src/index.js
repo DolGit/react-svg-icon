@@ -52,7 +52,6 @@ SvgMultiIcon.propTypes = {
 class SvgIcon extends React.Component {
     render() {
         let {iconUrl, name, title, className, color } = this.props
-        iconUrl = iconUrl ? formatUrl(iconUrl, name) : formatUrl(url, name)
         return (
             <svg role="img" title={title} className={className}>
                 <MakePath iconUrl={iconUrl} name={name} color={color} />

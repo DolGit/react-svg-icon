@@ -98,7 +98,6 @@ var SvgIcon = function (_React$Component3) {
             className = _props3.className,
             color = _props3.color;
 
-        iconUrl = iconUrl ? formatUrl(iconUrl, name) : formatUrl(url, name);
         return React.createElement(
             'svg',
             { role: 'img', title: title, className: className },
