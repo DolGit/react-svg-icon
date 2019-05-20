@@ -1,6 +1,6 @@
 {
   "name": "@dolnpm/svg-icon",
-  "version": "0.1.3-development",
+  "version": "0.1.4-development",
   "description": "If you're using vector graphics (SVG) as icons, then this React component will be useful.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -20,7 +20,7 @@
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
-  "dependencies": {
+  "peerDependencies": {
     "prop-types": "*",
     "react": "*",
     "@dolnpm/link-extractor": "*"
