@@ -1,6 +1,6 @@
 {
   "name": "@dolnpm/svg-icon",
-  "version": "0.1.4-development",
+  "version": "0.1.5-development",
   "description": "If you're using vector graphics (SVG) as icons, then this React component will be useful.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -27,16 +27,13 @@
   },
   "devDependencies": {
     "nwb": "0.23.x",
-    "semantic-release": "^15.13.2",
+    "semantic-release": "^17.2.3",
     "travis-deploy-once": "^5.0.11",
     "babel-core": "^6.0.14",
     "babel-loader": "^7.1.5",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.3.2",
-    "@dolnpm/link-extractor": "0.1.0-development"
+    "babel-preset-stage-0": "^6.5.0"
   },
   "author": "Alex Dollery (DolNpm/DolGit)",
   "homepage": "",
@@ -44,5 +41,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/DolGit/svg-icon.git"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.3.2",
+    "@dolnpm/link-extractor": "0.1.0-development"
   }
 }
